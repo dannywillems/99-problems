@@ -3,6 +3,8 @@
 
 pack :: (Eq a) => [a] -> [[a]]
 
+-- Equivalent to span in stdlib except it works with equality and returns
+-- the number of consecutive equal elements.
 computeTail :: (Eq a) => a -> [a] -> Int -> (Int, [a])
 computeTail a [] n = (n, [])
 computeTail a (x : xs) n = if a == x
